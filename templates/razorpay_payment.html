@@ -1,0 +1,16 @@
+<h1>Pay with Razorpay</h1>
+
+<form action="/payment-success/" method="POST">
+  {% csrf_token %}
+  <script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="{{ razorpay_merchant_key }}"
+    data-amount="{{ amount }}"
+    data-currency="{{ currency }}"
+    data-order_id="{{ razorpay_order_id }}"
+    data-buttontext="Pay with Razorpay"
+    data-name="Smartshop"
+    data-description="Complete your purchase"
+    data-theme.color="#3399cc">
+  </script>
+</form>
